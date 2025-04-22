@@ -1,0 +1,164 @@
+/* ResponsiveLanguage.css */
+/* Language-specific styling to handle text expansion in different languages */
+
+/* Base language-responsive classes */
+.lang-responsive {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+  
+  /* Button specific language handling */
+  .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    min-height: 2.5rem;
+    height: auto !important;
+    padding: 0.5rem 1rem;
+    width: auto !important;
+    min-width: 6rem;
+  }
+  
+  /* Text wrapping controls */
+  .lang-wrap {
+    white-space: normal !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Container classes */
+  .lang-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Language-specific adjustments */
+  [lang="es"] {
+    --lang-text-scale: 0.95;
+    --lang-expansion: 1.2;
+  }
+  
+  [lang="zh"] {
+    --lang-text-scale: 1;
+    --lang-expansion: 0.85;
+  }
+  
+  [lang="hi"] {
+    --lang-text-scale: 0.9;
+    --lang-expansion: 1.3;
+  }
+  
+  [lang="ar"] {
+    --lang-text-scale: 0.9;
+    --lang-expansion: 1.25;
+    direction: rtl;
+  }
+  
+  /* Responsive font sizing */
+  .lang-text-responsive {
+    font-size: calc(1em * var(--lang-text-scale, 1));
+  }
+  
+  /* Spanish specific adjustments */
+  [lang="es"] .lang-btn {
+    font-size: 0.9rem;
+  }
+  
+  /* Hindi specific adjustments */
+  [lang="hi"] .lang-btn {
+    font-size: 0.85rem;
+  }
+  
+  /* Chinese specific adjustments */
+  [lang="zh"] .lang-btn {
+    min-width: 5rem;
+  }
+  
+  /* RTL languages (Arabic, Hebrew) */
+  [lang="ar"] .lang-container,
+  [lang="he"] .lang-container {
+    direction: rtl;
+    text-align: right;
+  }
+  
+  /* Card headers for language handling */
+  .lang-card-header {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    min-height: 3rem;
+  }
+  
+  /* Icon + text handling */
+  .lang-icon-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Forms and inputs */
+  .lang-input {
+    min-width: 0;
+    width: 100%;
+  }
+  
+  /* Tables that need to be responsive */
+  .lang-table {
+    table-layout: auto;
+    width: 100%;
+  }
+  
+  .lang-table td,
+  .lang-table th {
+    white-space: normal !important;
+  }
+  
+  /* Navigation menus */
+  .lang-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .lang-nav-item {
+    white-space: normal;
+    min-width: 0;
+  }
+  
+  /* Tooltips and popovers */
+  .lang-tooltip {
+    max-width: 20rem;
+    word-break: break-word;
+  }
+  
+  /* Modal dialogs */
+  .lang-modal {
+    min-width: 0;
+    width: 100%;
+    max-width: 90vw;
+  }
+  
+  .lang-modal-title {
+    overflow-wrap: break-word;
+  }
+  
+  /* Debug mode for visual testing */
+  .debug-text-length {
+    border: 1px solid red;
+  }
+  
+  /* Media queries for different screen sizes */
+  @media (max-width: 768px) {
+    .lang-btn {
+      font-size: calc(1em * var(--lang-text-scale, 1) * 0.9);
+    }
+    
+    .lang-card-header {
+      min-height: 2.5rem;
+    }
+  }
